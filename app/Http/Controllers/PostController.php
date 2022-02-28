@@ -44,4 +44,14 @@ class PostController extends Controller
         $post = Post::find($id);
         return view('posts.edit', ['post' => $post]);
     }
+
+    public function update(Request $request, $id)
+    {
+        $post = Post::find($id);
+        $post->title = $request->title;
+        $post->body = $request->body;
+        $post->save();
+
+        return view('posts.show', ['post' => $post]);
+    }
 }
