@@ -12,7 +12,8 @@ class PostController extends Controller
     public function index()
     {
         // $posts = Post::all();
-        $posts = DB::select('select * from posts');
+        $posts = DB::table('posts')->orderBy('id', 'desc')->get();
+        // $posts = DB::select('select * from posts');
         return view('posts.index', ['posts' => $posts]);
     }
 
@@ -23,25 +24,28 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        $param = [
+        $posts = [
             'title' => $request->title,
             'body' => $request->body,
             'user_id' => Auth::id(),
         ];
-        DB::insert('insert into posts (title, body, user_id) values (:title, :body, :user_id)', $param);
+        // DB::insert('insert into posts (title, body, user_id) values (:title, :body, :user_id)', $posts);
+        DB::table('posts')->insert($posts);
 
         return redirect('/');
     }
 
     public function show($id)
     {
-        $post = Post::find($id);
+        // $post = Post::find($id);
+        $post = DB::table('posts')->where('id', $id)->first();
         return view('posts.show', ['post' => $post]);
     }
 
     public function edit($id)
     {
-        $post = Post::find($id);
+        // $post = Post::find($id);
+        $post = DB::table('posts')->where('id', $id)->first();
         return view('posts.edit', ['post' => $post]);
     }
 
@@ -57,8 +61,9 @@ class PostController extends Controller
 
     public function destroy($id)
     {
-        $post = Post::find($id);
-        $post->delete();
+        // $post = Post::find($id);
+        // $post->delete();
+        DB::table('posts')->where('id', $id)->delete();
 
         return redirect()->route('posts.index');
     }
