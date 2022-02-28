@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// use App\Post;
+use App\Post;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,5 +31,11 @@ class PostController extends Controller
         DB::insert('insert into posts (title, body, user_id) values (:title, :body, :user_id)', $param);
 
         return redirect('/');
+    }
+
+    public function show($id)
+    {
+        $post = Post::find($id);
+        return view('posts.show', ['post' => $post]);
     }
 }
