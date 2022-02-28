@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
+@section('title', '投稿一覧')
+
 @section('content')
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="mb-4">
-                    <a href="" class="btn btn-primary btn-lg">
+                    <a href="{{ route('posts.create') }}" class="btn btn-primary btn-lg">
                         新規投稿
                     </a>
                 </div>
