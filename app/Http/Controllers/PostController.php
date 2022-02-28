@@ -44,7 +44,8 @@ class PostController extends Controller
 
     public function edit($id)
     {
-        $post = Post::find($id);
+        // $post = Post::find($id);
+        $post = DB::table('posts')->where('id', $id)->first();
         return view('posts.edit', ['post' => $post]);
     }
 
