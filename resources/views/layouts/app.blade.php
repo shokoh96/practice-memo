@@ -63,7 +63,7 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
-                                                                                                 document.getElementById('logout-form').submit();">
+                                                                            document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -79,11 +79,13 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4" style="padding-bottom: 100px !important;">
             @yield('content')
         </main>
 
-        <footer class="footer mt-4 py-3 bg-light fixed-bottom" style="background-color: #e3f2fd !important;">
+        <footer class="footer mt-4 py-3 bg-light fixed-bottom" style="
+            background-color: #e3f2fd !important;
+            ">
             <div class="container text-center">
                 <span class="text-muted">practicememo &copy; All Right Reserved.</span>
             </div>
