@@ -21,7 +21,8 @@
                                     onclick="return confirm('本当に削除しますか？');">
                             </form>
                             <div class="text-right w-50">
-                                <a href="" class="btn btn-primary" style="width: 150px;">編集する</a>
+                                <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-primary"
+                                    style="width: 150px;">編集する</a>
                             </div>
                         </div>
                     </div><!-- /.card-body -->
