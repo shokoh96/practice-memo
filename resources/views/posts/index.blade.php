@@ -18,10 +18,11 @@
                     @foreach ($posts as $post)
                         <div class="card-body">
                             <h5 class="card-title">タイトル ： {{ $post->title }}</h5>
-                            <p class="card-text">
+                            <p class="card-text" style="font-size: 17px; margin-top: 20px;">
                                 内容 : {{ $post->body }}
                             </p>
-                            <p class="card-text">投稿者： 毛さん</p>
+                            <p class="card-text">投稿者： さん</p>
+                            {{-- {{ $post->user->name }} --}}
                             <a href="{{ route('posts.show', $post->id) }}" class="btn btn-primary">詳細へ</a>
                         </div>
                         <div class="card-footer text-muted">
