@@ -24,12 +24,13 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        $param = [
+        $posts = [
             'title' => $request->title,
             'body' => $request->body,
             'user_id' => Auth::id(),
         ];
-        DB::insert('insert into posts (title, body, user_id) values (:title, :body, :user_id)', $param);
+        // DB::insert('insert into posts (title, body, user_id) values (:title, :body, :user_id)', $posts);
+        DB::table('posts')->insert($posts);
 
         return redirect('/');
     }
