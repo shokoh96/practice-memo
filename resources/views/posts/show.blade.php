@@ -14,7 +14,8 @@
                         <p class="card-text" style="font-size: 20px;">{{ $post->body }}</p>
                         <p style="font-size: 16px;">投稿日時：{{ $post->created_at }}</p>
                         <div class="d-flex">
-                            <form action="" method="POST" class="d-inline-block w-50">
+                            <form action="{{ route('posts.destroy', $post->id) }}" method="POST"
+                                class="d-inline-block w-50">
                                 @csrf
                                 @method('delete')
                                 <input type="submit" value="削除" class="btn btn-danger d-block"
