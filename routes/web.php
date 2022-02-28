@@ -19,4 +19,7 @@ use Illuminate\Support\Facades\Auth;
 // });
 Auth::routes();
 
+Route::get('/home', 'PostController@index')->name('posts.index');
 Route::get('/', 'PostController@index')->name('posts.index');
+Route::get('/create', 'PostController@create')->name('posts.create');
+Route::post('/', 'PostController@store')->name('posts.store');
