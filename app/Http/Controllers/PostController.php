@@ -11,8 +11,8 @@ class PostController extends Controller
 {
     public function index()
     {
-        // $posts = Post::all();
-        $posts = DB::table('posts')->orderBy('id', 'desc')->get();
+        $posts = Post::all();
+        // $posts = DB::table('posts')->orderBy('id', 'desc')->get();
         // $posts = DB::select('select * from posts');
         return view('posts.index', ['posts' => $posts]);
     }
