@@ -37,15 +37,15 @@ class PostController extends Controller
 
     public function show($id)
     {
-        // $post = Post::find($id);
-        $post = DB::table('posts')->where('id', $id)->first();
+        $post = Post::find($id);
+        // $post = DB::table('posts')->where('id', $id)->first();
         return view('posts.show', ['post' => $post]);
     }
 
     public function edit($id)
     {
-        // $post = Post::find($id);
-        $post = DB::table('posts')->where('id', $id)->first();
+        $post = Post::find($id);
+        // $post = DB::table('posts')->where('id', $id)->first();
         return view('posts.edit', ['post' => $post]);
     }
 
