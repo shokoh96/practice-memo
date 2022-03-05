@@ -21,7 +21,7 @@
                             <p class="card-text" style="font-size: 17px; margin-top: 20px;">
                                 内容 : {{ $post->body }}
                             </p>
-                            <p class="card-text">投稿者： さん</p>
+                            <p class="card-text">投稿者： {{ $post->user->name }}さん</p>
                             {{-- {{ $post->user->name }} --}}
                             <a href="{{ route('posts.show', $post->id) }}" class="btn btn-primary">詳細へ</a>
                         </div>
