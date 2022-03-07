@@ -27,3 +27,5 @@ Route::get('/{id}', 'PostController@show')->name('posts.show');
 Route::get('/{id}/edit', 'PostController@edit')->name('posts.edit');
 Route::put('/{id}', 'PostController@update')->name('posts.update');
 Route::delete('/{id}', 'PostController@destroy')->name('posts.destroy');
+
+Route::get('/comments/create/{post_id}', 'CommentController@create')->name('comments.create');
