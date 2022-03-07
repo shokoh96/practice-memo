@@ -32,7 +32,8 @@
         </div><!-- /.row -->
         <div class="row justify-content-center mt-4">
             <div class="col-md-8">
-                <button type="button" class="btn btn-primary">コメントする</button>
+                <button type="button" class="btn btn-primary"
+                    onclick="location.href='{{ route('comments.create', $post->id) }}'">コメントする</button>
             </div>
         </div><!-- /.row -->
         <div class="row justify-content-center">
